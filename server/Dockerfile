@@ -4,10 +4,10 @@ WORKDIR /app
 
 COPY package*.json ./
 
-RUN npm install --legacy-peer-deps
+RUN npm install
 
 COPY . .
 
-EXPOSE 5173
+EXPOSE 5000
 
-CMD ["npm", "run", "dev"]
+CMD ["node", "index.js"]
