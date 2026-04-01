@@ -9,7 +9,14 @@ const authRoutes = require("../routes/auth");   // ✅ go up from api/
 
 const app = express();
 
-app.use(cors({ origin: process.env.FRONTEND_URL }));
+app.use(
+  cors({
+    origin: [
+      "http://localhost:5173",
+      "http://51.20.64.240:5173",
+    ],
+  })
+);
 console.log("JWT:", process.env.JWT_SECRET);
 app.use(express.json());
 
