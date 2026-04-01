@@ -17,7 +17,7 @@ export default function Register({ onSwitch, onAuth }) {
     }
     setLoading(true);
     try {
-      const res = await API.post("/api/auth/register", form);
+      const res = await API.post("/auth/register", form);
       localStorage.setItem("token", res.data.token);
       localStorage.setItem("user", JSON.stringify({
         name: res.data.name,
